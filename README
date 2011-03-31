@@ -1,0 +1,5 @@
+Usage: yaml_config_parser.rb [options]
+
+    -c, --config FILE                YAML config file
+    -f, --file FILE                  File to parse
+    -h, --help                       Display this screen
