@@ -3,3 +3,32 @@ Usage: yaml_config_parser.rb [options]
     -c, --config FILE                YAML config file
     -f, --file FILE                  File to parse
     -h, --help                       Display this screen
+
+Example:
+data.yml source:
+
+global:
+  host: 127.0.0.1
+  port: 8080
+
+mail:
+  smtp: bar.com
+  from: foo@bar.com
+
+config.txt source:
+
+Host: #{global:host}
+Port: #{global:port}
+
+SMTP server: #{mail:smtp}
+Mail from: #{mail:from}
+
+After: ./yaml_config_parser.rb -c data.yml -f config.txt 
+
+config.txt source: 
+
+Host: 127.0.0.1
+Port: 8080
+
+SMTP server: bar.com
+Mail from: foo@bar.com
